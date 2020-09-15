@@ -1,0 +1,151 @@
+.teacup, .ref {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.teacup--base {
+  display: flex;
+  justify-content: center;
+}
+
+.teacup--handle_inside::before, .teacup--base .teacup--teabag_string::before, .teacup--base .teacup--teabag_top::before, .teacup--base_inside::before {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: #7E7F9A;
+}
+
+.ref {
+  width: 650px;
+  opacity: 0.3;
+}
+
+.teacup {
+  width: 510px;
+  height: 510px;
+}
+.teacup--base {
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  width: 320px;
+  height: 265px;
+  border-radius: 0% 0% 150% 150%;
+  border: 3px solid #212529;
+  z-index: 2;
+  background: #2a324b;
+}
+.teacup--base_inside {
+  position: absolute;
+  top: -50px;
+  width: 322px;
+  height: 100px;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 3px solid #212529;
+  background: #7e678e;
+}
+.teacup--base_inside::before {
+  position: absolute;
+  top: 25px;
+  left: 7.5px;
+  width: 310px;
+  height: 100px;
+  border-radius: 100%;
+  border: 2px solid #992F2B;
+  background: #b07d62;
+}
+.teacup--base .teacup--teabag {
+  position: absolute;
+  top: 105px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  background: #D96478;
+  border: 2px solid #212529;
+  border-top: none;
+}
+.teacup--base .teacup--teabag_top {
+  width: 30px;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  border-bottom: 20px solid #D96478;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+.teacup--base .teacup--teabag_top::before {
+  z-index: -1;
+  width: 32px;
+  position: absolute;
+  top: -2px;
+  left: -18px;
+  border-bottom: 22px solid #212529;
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+}
+.teacup--base .teacup--teabag_string {
+  position: absolute;
+  top: -55px;
+  right: 28px;
+  width: 3px;
+  height: 50px;
+  border-top-right-radius: 3px;
+  background: #A6A8D7;
+}
+.teacup--base .teacup--teabag_string::before {
+  top: -12px;
+  right: 0;
+  width: 25px;
+  height: 18px;
+  border-top: 3px solid #A6A8D7;
+  border-right: 3px solid #A6A8D7;
+  border-left: 2px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-radius: 50%;
+  transform: rotateZ(-20deg);
+}
+.teacup--handle {
+  position: absolute;
+  left: 40px;
+  bottom: 100px;
+  width: 110px;
+  height: 160px;
+  z-index: 0;
+  border-radius: 140% 140% 30% 150%;
+  transform: rotateZ(-30deg);
+  overflow: hidden;
+  border: 3px solid #212529;
+  background: #2a324b;
+}
+.teacup--handle_inside {
+  position: absolute;
+  width: 100px;
+  height: 125px;
+  border-radius: 100%;
+  bottom: 10px;
+  left: -8px;
+  overflow: hidden;
+  border: 2px solid #212529;
+  background: #7e678e;
+}
+.teacup--handle_inside::before {
+  position: absolute;
+  top: 4px;
+  right: -4px;
+  width: 70px;
+  height: 100px;
+  border-radius: 100%;
+  border: 3px solid #212529;
+  background: #7e7f9a;
+}
