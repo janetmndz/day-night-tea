@@ -1,8 +1,9 @@
 
-$bg: #7E7F9A;
+$bg: #c5d5e7;
 $border: #212529;
+$lighter_teacup: #457b9d;
 $teacup: #2a324b;
-$teacup_inside: #7E678E;
+$teacup_inside: #f1faee;
 $teabag: #D96478;
 $drink: #b07d62;
 
@@ -18,7 +19,7 @@ $drink: #b07d62;
 }
 %pseudo-base {
   content: '';
-  display:block;
+  display: block;
   position: absolute;
 }
 
@@ -33,12 +34,6 @@ html, body {
   min-width: 100vw;
   min-height:100vh;
   background: $bg;
-}
-// This is a reference photo
-.ref {
-  @extend %center;
-  width: 650px;
-  opacity: 0.3;
 }
 
 .teacup {
@@ -131,10 +126,18 @@ html, body {
           border-radius: 50%;
           transform: rotateZ(-20deg);
         }
+        &::after {
+          @extend %pseudo-base;
+          left: -1px;
+          bottom: -4px;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: #A6A8D7;
+        }
       }
     }
   }
-
 
   &--handle {
     position: absolute;
@@ -172,5 +175,88 @@ html, body {
         @include transparent_color($bg);
       }
     }
+  }
+
+  &--time_check {
+    z-index: 5;
+    position: absolute;
+    bottom: 103px;
+    right: 129px;
+    appearance: none;
+    outline: none;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    &::before, &::after {
+      @extend %pseudo-base, %center;
+    }
+    &::before {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: yellow;
+      border: 2px solid orange;
+      animation: moon 2300ms linear;
+    }
+    &::after {
+      left: 21px;
+      top: 25px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: $teabag;
+      border-right: 2px solid orange;
+      border-bottom: 2px solid orange;
+      border-left: 2px solid transparent;
+      transition: opacity 500ms ease;
+      animation: hide_moon 2000ms linear;
+      animation-fill-mode: both;
+    }
+    &:checked {
+      &::before {
+        animation: moon 2300ms linear;
+      }
+      &::after {
+        animation: hide_moon 2000ms linear;
+      }
+      & ~ .toggle_time {
+        background: $lighter_teacup
+      }
+    }
+  }
+
+  .toggle_time {
+    transition: background 500ms ease;
+  }
+}
+
+
+@keyframes moon {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide_moon {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  50% {
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
   }
 }
