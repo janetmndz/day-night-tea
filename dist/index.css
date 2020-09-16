@@ -118,6 +118,48 @@ html, body {
   border-radius: 50%;
   background: #A6A8D7;
 }
+.teacup--design > * {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 325px;
+  height: 250px;
+  transition: opacity 500ms linear;
+}
+.teacup--design_day {
+  opacity: 1;
+}
+.teacup--design_night {
+  opacity: 0;
+}
+.teacup--design_night .star {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(#457b9d 70%, #efefef 71%);
+  background-position: 15px 15px;
+  background-size: 30px;
+}
+.teacup--design_night .star:nth-of-type(1) {
+  top: 40%;
+  left: 25%;
+}
+.teacup--design_night .star:nth-of-type(2) {
+  top: 20%;
+  left: 0%;
+}
+.teacup--design_night .star:nth-of-type(3) {
+  top: 70%;
+  left: 15%;
+}
+.teacup--design_night .star:nth-of-type(4) {
+  top: 70%;
+  left: 50%;
+}
+.teacup--design_night .star:nth-of-type(5) {
+  top: 20%;
+  left: 45%;
+}
 .teacup--handle {
   position: absolute;
   left: 40px;
@@ -196,6 +238,12 @@ html, body {
 }
 .teacup--time_check:checked ~ .toggle_time {
   background: #457b9d;
+}
+.teacup--time_check:checked ~ .toggle_time .teacup--design_night {
+  opacity: 1;
+}
+.teacup--time_check:checked ~ .toggle_time .teacup--design_day {
+  opacity: 0;
 }
 .teacup .toggle_time {
   transition: background 500ms ease;
