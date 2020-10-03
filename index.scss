@@ -2,8 +2,8 @@
 // Color Variables
 $bg: #c5d5e7;
 $border: #212529;
-$lighter_teacup: #457b9d;
-$teacup: #2a324b;
+$day_teacup: #457b9d;
+$night_teacup: #2a324b;
 $teacup_inside: #f1faee;
 $teabag: #D96478;
 $drink: #b07d62;
@@ -55,7 +55,7 @@ html, body {
     border-radius: 0% 0% 150% 150%;
     border: 3px solid $border;
     z-index: 2;
-    @include transparent_color($teacup);
+    @include transparent_color($day_teacup);
     &_inside {
       position: absolute;
       top: -50px;
@@ -151,7 +151,8 @@ html, body {
       bottom: 0;
       width: 325px;
       height: 250px;
-      transition: opacity 500ms linear;
+      overflow: hidden;
+      transition: opacity 500ms ease-in 500ms; 
     }
 
     &_day {
@@ -164,28 +165,63 @@ html, body {
         position: absolute;
         width: 30px;
         height: 30px;
-        background: radial-gradient($lighter_teacup 70%, #efefef 71%);
+        background: radial-gradient($night_teacup 70%, #efefef 71%);
         background-position: $half_star $half_star;
         background-size: $star_size;
+        &[data-size="small"] {
+          transform: scale(0.65);
+        }
         &:nth-of-type(1){
-          top: 40%;
-          left: 25%;
+          top: 6%;
+          left: -3%;
         }
         &:nth-of-type(2){
-          top: 20%;
-          left: 0%;
+          top: 35%;
+          left: 1%;
         }
         &:nth-of-type(3){
-          top: 70%;
-          left: 15%;
+          top: 25%;
+          left: 21%;
         }
         &:nth-of-type(4){
-          top: 70%;
-          left: 50%;
+          top: 38%;
+          left: 47%;
         }
         &:nth-of-type(5){
-          top: 20%;
-          left: 45%;
+          top: 15%;
+          left: 65%;
+        }
+        &:nth-of-type(6){
+          top: 63%;
+          left: 5%;
+        }
+        &:nth-of-type(7){
+          top: 80%;
+          left: 40%;
+        }
+        &:nth-of-type(8){
+          top: 54%;
+          left: 24%;
+        }
+        &:nth-of-type(9){
+          top: 65%;
+          left: 62%;
+        }
+        &:nth-of-type(10){
+          top: 14%;
+          left: 89%;
+        }
+        &:nth-of-type(11){
+          top: 46%;
+          left: 83%;
+        }
+        &:nth-of-type(12){
+          top: 14%;
+          left: 40%;
+        }
+        &:nth-of-type(13){
+          top: 70%;
+          left: 80%;
         }
       }
     }
@@ -202,7 +238,7 @@ html, body {
     transform: rotateZ(-30deg);
     overflow: hidden;
     border: 3px solid $border;
-    @include transparent_color($teacup);
+    @include transparent_color($day_teacup);
     
     &_inside {
       position: absolute;
@@ -263,7 +299,7 @@ html, body {
       border-right: 2px solid orange;
       border-bottom: 2px solid orange;
       border-left: 2px solid transparent;
-      transition: opacity 500ms ease;
+      transition: opacity 500ms ease-in-out 500ms;
       animation: hide_moon 2000ms linear;
       animation-fill-mode: both;
     }
@@ -275,9 +311,11 @@ html, body {
         animation: hide_moon 2000ms linear;
       }
       & ~ .toggle_time {
-        background: $lighter_teacup;
+        background: $night_teacup;
+        transition-delay: 500ms;
         .teacup--design_night {
           opacity: 1;
+          transition-delay: 800ms;
         }
         .teacup--design_day {
           opacity: 0;
