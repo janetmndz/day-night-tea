@@ -1,0 +1,25 @@
+{
+  "name": "teacup-animation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janetmndz/day-night-tea.git"
+  },
+  "author": "Janet Mendez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/janetmndz/day-night-tea/issues"
+  },
+  "homepage": "https://github.com/janetmndz/day-night-tea#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.1.0"
+  }
+}

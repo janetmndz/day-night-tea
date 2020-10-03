@@ -1,0 +1,27 @@
+doctype
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="./index.css", attr)
+    title Day and Night Tea
+  body
+    .teacup
+      input.teacup--time_check(type="checkbox")
+
+      .teacup--base.toggle_time
+        .teacup--base_inside
+        .teacup--design
+          .teacup--design_night
+            - for (var i = 1; i <= 13; i++)
+              .star
+          .teacup--design_day
+        .teacup--teabag
+          .teacup--teabag_top
+          .teacup--teabag_string
+
+
+      .teacup--handle.toggle_time
+        .teacup--handle_inside
+
+
